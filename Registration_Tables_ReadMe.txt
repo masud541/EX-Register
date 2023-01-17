@@ -1,0 +1,164 @@
+RegistrationAssistance.aspx
+To:
+	RegistrationSerialCheckResult.aspx.cs
+	
+=========================================================================================================================
+RSDataSet.JLWSerialDataTable dt = new RSDataSet.JLWSerialDataTable();
+JLWSerialTableAdapter da = new JLWSerialTableAdapter();
+
+dt = da.GetDataSimilarSerial(TextBox1.Text);
+				
+
+
+MethodName: GetDataJLWSerial
+--------------------------------------------------------------------------------------------------------------------------------------------
+SELECT a.SERIAL_NUMBER, b.SKU, b.PART_NUMBER, b.category
+FROM sx_serial_numbers a, sx_inventory_items b
+WHERE UPPER(a.serial_number) = UPPER(:serial_number)
+--AND a.serial_number LIKE 'JLW%'
+AND a.SXINVITM_FK = b.ID
+AND a.serial_number NOT IN (SELECT serial FROM rs_registration)
+
+
+sx_serial_numbers
+sx_inventory_items
+rs_registration
+
+
+
+
+MethodName: GetDataSimilarSerial
+--------------------------------------------------------------------------------------------------------------------------------------------
+SELECT a.SERIAL_NUMBER, b.SKU, b.PART_NUMBER, b.category, DECODE(c.RS_PREMIUM_SEQ, null, 0, 1) PREMIUM
+FROM sx_serial_numbers a, sx_inventory_items b, rs_premium c
+WHERE  
+UPPER(a.serial_number) = UPPER(:serial_number)
+/*(
+   UPPER(a.serial_number) = UPPER(:serial_number)
+OR UPPER(a.serial_number) = TRIM(REPLACE(SUBSTR(:serial_number,3,50),' ',''))
+OR UPPER(a.serial_number) = TRIM(REPLACE(substr(:serial_number,1,length(:serial_number)-2),' ',''))
+OR UPPER(a.serial_number) = TRIM(REPLACE(substr(substr(:serial_number,1,length(:serial_number)-2),3,50),' ','')) )*/
+AND a.SXINVITM_FK = b.ID
+AND LENGTH(SERIAL_NUMBER) > 1
+AND b.ID = c.SXINVITM_FK(+)
+AND (SELECT COUNT(serial) FROM rs_registration WHERE serial = :serial_number) = 0
+ORDER BY 1
+
+
+sx_serial_numbers
+sx_inventory_items
+rs_premium
+rs_registration
+
+
+
+RegistrationCustomerInfo.aspx.cs
+=========================================================================================================================
+
+RegistrationCustomerInfoConfirm.aspx.cs
+=========================================================================================================================
+
+Method:	SelectCountSerialSku
+
+SELECT COUNT(*) FROM RS_REGISTRATION
+WHERE UPPER(serial) = UPPER(:serial)
+AND sku = :sku
+
+
+
+Method: DeleteRegistrations1234TEST
+------------------------------------------
+DELETE FROM "JLAUDIO"."RS_REGISTRATION"
+WHERE upper(serial) = '1234TEST'
+
+Method: GetDataRegistrationBySerial
+------------------------------------------
+SELECT REGISTRATION_SEQ, REGISTRATION_DATE, PURCHASE_DATE, LAST_NAME, FIRST_NAME, PHONE, 
+EMAIL, CUSTOMER_COUNTRY, CUSTOMER_ADDRESS, CUSTOMER_CITY, CUSTOMER_STATE, CUSTOMER_ZIP,
+ DEALER_NAME, DEALER_CITY, DEALER_STATE, PURCHASE_TYPE, INSTALLATION_TYPE, SHIRT_SIZE, OPT_IN,
+ SKU, SERIAL FROM RS_REGISTRATION WHERE (UPPER(SERIAL) LIKE NVL(UPPER(:serial), SERIAL))
+
+Method: GetDataRegistrationSeq
+-------------------------------------------
+SELECT REGISTRATION_SEQ, REGISTRATION_DATE, PURCHASE_DATE, LAST_NAME, FIRST_NAME, PHONE, EMAIL, CUSTOMER_COUNTRY, 
+CUSTOMER_ADDRESS, CUSTOMER_CITY, CUSTOMER_STATE, CUSTOMER_ZIP, DEALER_NAME, DEALER_CITY, DEALER_STATE, PURCHASE_TYPE, 
+INSTALLATION_TYPE, SHIRT_SIZE, OPT_IN, SKU, SERIAL FROM RS_REGISTRATION 
+WHERE registration_seq = :registration_seq
+
+
+Method: InsertRegistraation
+-------------------------------------------
+INSERT INTO "JLAUDIO"."RS_REGISTRATION" ("REGISTRATION_SEQ", "REGISTRATION_DATE", 
+"PURCHASE_DATE", "LAST_NAME", "FIRST_NAME", "PHONE", "EMAIL", "CUSTOMER_COUNTRY", 
+"CUSTOMER_ADDRESS", "CUSTOMER_CITY", "CUSTOMER_STATE", "CUSTOMER_ZIP", "DEALER_NAME", 
+"DEALER_CITY", "DEALER_STATE", "PURCHASE_TYPE", "INSTALLATION_TYPE", 
+"SHIRT_SIZE", "OPT_IN", "SKU", "SERIAL", "INSTALLATION_CATEGORY") 
+VALUES (JLAUDIO.RSSQ_REGISTRATION.NEXTVAL, :REGISTRATION_DATE, 
+:PURCHASE_DATE, :LAST_NAME, :FIRST_NAME, :PHONE, :EMAIL, :CUSTOMER_COUNTRY, 
+:CUSTOMER_ADDRESS, :CUSTOMER_CITY, :CUSTOMER_STATE, :CUSTOMER_ZIP, :DEALER_NAME, 
+:DEALER_CITY, :DEALER_STATE, :PURCHASE_TYPE, :INSTALLATION_TYPE, :SHIRT_SIZE, 
+:OPT_IN, :SKU, UPPER(:SERIAL), DECODE(:INSTALLATION_TYPE, 'D', 'Dealer', 'C', 'Dealer', 'ND', 'Self', 'F', 'Self', :INSTALLATION_TYPE))
+
+Method: InsertRegistrationC7
+-------------------------------------------
+INSERT INTO "JLAUDIO"."RS_REGISTRATION" ("REGISTRATION_SEQ", "REGISTRATION_DATE", 
+"PURCHASE_DATE", "LAST_NAME", "FIRST_NAME", "PHONE", "EMAIL", "CUSTOMER_COUNTRY", 
+"CUSTOMER_ADDRESS", "CUSTOMER_CITY", "CUSTOMER_STATE", "CUSTOMER_ZIP", "DEALER_NAME", 
+"DEALER_CITY", "DEALER_STATE", "PURCHASE_TYPE", "INSTALLATION_TYPE", 
+"SHIRT_SIZE", "OPT_IN", "SKU", "SERIAL", "INSTALLATION_CATEGORY", "CUSTOMER_ADDRESS_2", "DEALER_COUNTRY", "MARKETPLACE") 
+VALUES (JLAUDIO.RSSQ_REGISTRATION.NEXTVAL, :REGISTRATION_DATE, 
+:PURCHASE_DATE, :LAST_NAME, :FIRST_NAME, :PHONE, :EMAIL, :CUSTOMER_COUNTRY, 
+:CUSTOMER_ADDRESS, :CUSTOMER_CITY, :CUSTOMER_STATE, :CUSTOMER_ZIP, :DEALER_NAME, 
+:DEALER_CITY, :DEALER_STATE, :PURCHASE_TYPE, :INSTALLATION_TYPE, :SHIRT_SIZE, 
+:OPT_IN, :SKU, UPPER(:SERIAL), :INSTALLATION_CATEGORY,  
+:CUSTOMER_ADDRESS_2, :DEALER_COUNTRY, :MARKETPLACE)
+
+
+Method: SelectCountEmail
+-------------------------------------------
+SELECT COUNT(*) FROM RS_REGISTRATION
+WHERE email = :email
+
+
+Method: SelectMaxRegistrationSeqByEmail
+-------------------------------------------
+SELECT MAX(registration_seq) FROM RS_REGISTRATION
+WHERE email = :email
+
+
+
+Method: GetGrantedRoles
+----------------------------------------------
+select granted_role from user_role_privs
+
+
+=====================================================================RegistrationFindProduct.aspx
+Method: SelectCountPremiumSku
+----------------------------------------------
+SELECT COUNT(*) 
+FROM RS_PREMIUM a, SX_INVENTORY_ITEMS b
+WHERE a.SXINVITM_FK = b.ID
+AND b.SKU = :sku
+
+
+===================================================================================================
+RegistrationAssistance.aspx.cs
+
+RegistrationCustomerInfoConfirm.aspx.cs
+	InsertRegistraation()
+	SendRSemail()
+
+RegistrationCustomerInfoConfirm.aspx.cs
+
+RegistrationDescribeProduct.aspx.cs	
+
+RegistrationFindProduct.aspx.cs
+	SelectCountPremiumSku()
+	
+RegistrationSerialCheckResult.aspx.cs
+	GetDataSimilarSerial()
+
+RegistrationView.aspx
+	GetDataRegistrationBySerial()
+
+	

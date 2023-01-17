@@ -1,0 +1,237 @@
+BODY
+{
+    FONT-FAMILY: Verdana, Arial;
+	background-color: #dfdfdf;
+	FONT-SIZE: small;
+    }
+
+.masterContent 
+{
+	background-color: #dfdfdf;
+    width: 100%;
+}
+
+.appBannerBackground 
+{
+	background-color: white;
+	height: 160px;
+	width: 100%;
+	background-repeat:no-repeat;
+}
+
+.tableHeader
+{
+	background-image: url(../images/tableHeaderBackground.png);
+	background-repeat:repeat-x;
+	padding: 0.2em 0.5em 0.2em 0.5em;
+	color: #1E5B6C;
+}
+
+.welcomeLabel
+{
+    font-size:x-large;
+    font-weight:bold;
+}
+
+.headerDept
+{
+    font-size:x-small;
+    font-weight:bold;
+    font-family:Arial;
+    color:#1E5B6C;
+}
+
+.headerSystem
+{
+    font-size:x-large;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#1E5B6C;
+}
+
+.announceLabel
+{
+    font-size:medium;
+    font-weight:bold;
+}
+
+.tableColumnSeparator
+{
+	background-image: url(../images/tableHeaderBackground.png);
+	background-repeat:repeat-y;
+	width:1px;
+}
+
+.tableRowSeparator
+{
+	background-image: url(../images/tableHeaderBackground.png);
+	background-repeat:repeat-x;
+	height:1px;
+}
+
+.gridViewHeader
+{
+	background-image: url(../images/tableHeaderBackground.png);
+	background-repeat:repeat-x;
+	padding: 5px 2px 5px 2px;
+	color: #1E5B6C;
+    font-weight: bold;
+}
+
+.gridViewHeader55
+{
+	background-image: url(../images/tableHeaderBackground55.png);
+	background-repeat:repeat-x;
+	padding: 5px 2px 5px 2px;
+	color: #1E5B6C;
+    font-weight: bold;
+}
+
+.gridViewHeader a
+{
+	background-repeat:repeat-x;
+	padding: 5px 2px 5px 2px;
+	color: #1E5B6C;
+    text-decoration:none;
+    font-weight: bold;
+}
+
+.gridViewCell
+{
+	padding: 5px 2px 5px 2px;
+}
+
+.gridViewPager td
+{
+	background-image: url(../images/tableHeaderBackground.png);
+	background-repeat:repeat-x;
+    padding-left: 4px;      
+    padding-right: 4px;     
+	color: #000000;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+
+.gridViewPager a
+{
+  color: White;
+  font-weight: bold;
+}
+
+.tableLabel, table.firstCol > tbody > tr > td:first-child
+{
+	text-align: right;
+	color: #426b96;
+	font-weight: bold;
+	padding-left: 2ex;
+}
+
+.multiLineText
+{
+    COLOR: #000000;
+    FONT-FAMILY: Verdana, Arial;
+    FONT-SIZE: 8pt
+}
+
+.dropdownlist
+{
+    COLOR: #000000;
+    FONT-FAMILY: Verdana, Arial;
+    FONT-SIZE: 8pt
+}
+
+.popupMenu
+{
+    border-style: none;
+    width: 100%;
+    background-color: #EEEEEE;
+}
+.frame_background
+{
+    background-color: #3F6994;
+}
+.frame_border
+{
+	border-color: #3F6994;
+}
+.frame_thin_top_border
+{
+    background-color: #3F6994;
+    border-top-style: solid;
+    border-top-color: #3F6994;
+    border-top-width: 1px;	
+}
+.frame_thin_side_border
+{
+    background-color: #3F6994;
+    border-right-style: solid;
+    border-right-color: #3F6994;
+    border-right-width: 1px;	
+}
+.frame_background_DarkBlue
+{
+    background-color: #074085;
+}
+.frame_border_black
+{
+	border-color: Black;
+}
+.frame_background_white
+{
+    background-color: White;
+}
+.menu_background
+{
+    background-color: white;
+    
+}
+.requiredField
+{
+	background-color: #EDD98F;
+}	
+.requiredFieldDropdown
+{
+	background-color: #EDD98F;
+    FONT-FAMILY: Verdana, Arial;
+    FONT-SIZE: 8pt
+}	
+.errors
+{
+    COLOR: #ff0000;
+    FONT-SIZE: 
+input
+{
+    COLOR: black;
+    FONT-FAMILY: Arial, Verdana;
+	margin-left: 0px;
+}
+;
+}
+.inputlist 
+{
+   /* nothing really needed here */
+      font-size: 8pt;
+      white-space: nowrap;
+}
+.inputlist label 
+{
+      white-space: nowrap;
+      font-size: 8pt;
+}
+.menuStyle 
+{
+	border-top: 1px solid #1E5B6C;
+    border-bottom: 1px solid #1E5B6C;
+    padding: 0.05em 2em;
+    background-repeat: repeat-x;
+	    background-color: White;
+    
+        height: 26px;
+}
+
+.menuHoverStyle 
+{
+	
+	background-repeat: repeat-x;
+	background-color: White;
+}

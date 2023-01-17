@@ -1,0 +1,33 @@
+﻿<asp:Menu runat="server" SkinID="menuSkin">
+    <StaticMenuStyle 
+        VerticalPadding="0.1em"/>
+    
+    <StaticMenuItemStyle
+        HorizontalPadding="20px"
+        ItemSpacing="1em"
+        ForeColor="#1E5B6C" 
+        Font-Size="0.9em" />
+
+    <StaticHoverStyle 
+        CssClass="menuHoverStyle"
+        ForeColor="Red" />
+        
+    <DynamicMenuStyle 
+        BackColor=White 
+        BorderColor="#1E5B6C" 
+        BorderWidth="1px" 
+        BorderStyle="solid"
+        HorizontalPadding="0.1em" 
+        VerticalPadding="0.1em" />
+        
+    <DynamicMenuItemStyle 
+        HorizontalPadding="0.5em" 
+        VerticalPadding="0.1em"
+        Font-Size="0.9em"
+        ForeColor="Black" />
+        
+    <DynamicHoverStyle 
+        CssClass="menuHoverStyle"
+        ForeColor="Red" />
+               
+</asp:Menu>  

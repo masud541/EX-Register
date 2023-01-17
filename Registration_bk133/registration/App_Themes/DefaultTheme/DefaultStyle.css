@@ -1,0 +1,24 @@
+﻿.menuStyle 
+{
+	padding: 0.1em 2em 0.1em 2em;
+   
+	background-repeat: repeat-x;
+	background-color: White;
+    
+    border-bottom-color: #1E5B6C; 
+    border-bottom-width: 1px; 
+    border-bottom-style:solid;
+    
+    border-top-color: #1E5B6C; 
+    border-top-width: 1px; 
+    border-top-style:solid;
+	
+	
+}
+
+.menuHoverStyle 
+{
+	
+	background-repeat: repeat-x;
+	background-color: White;
+}

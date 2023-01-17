@@ -1,0 +1,23 @@
+    <script type="text/javascript">
+        function amp_message() {
+            alert("Notice: All amplifier returns must be shipped to Pheonix.");
+        }
+
+
+
+    $(function () {
+        var f = $("#<%=hfPosition.ClientID%>");
+        window.onload = function () {
+            var position = parseInt(f.val());
+            if (!isNaN(position)) {
+                $(window).scrollTop(position);
+            }
+        };
+        window.onscroll = function () {
+            var position = $(window).scrollTop();
+            f.val(position);
+        };
+    });
+
+
+    </script>

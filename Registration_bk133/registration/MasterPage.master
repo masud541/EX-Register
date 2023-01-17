@@ -1,0 +1,269 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link rel="STYLESHEET" type="text/css" href="css/core.css">
+    <link rel="STYLESHEET" type="text/css" href="css/navy_gray.css">
+    <title>JL Audio RA</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+        .style2
+        {
+        }
+        .style3
+        {            text-align: right;
+        }
+        .style4
+        {
+            width: 15px;
+        }
+        .style6
+        {
+            color: #000000;
+        }
+    p.MsoNormal
+	{margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	        margin-left: 0in;
+            margin-right: 0in;
+            margin-top: 0in;
+        }
+        .style7
+        {
+            color: #FFFFFF;
+            font-size: large;
+        }
+        .style8
+        {
+            font-size: medium;
+        }
+        .style9
+        {
+            font-size: medium;
+            color: #FFFFFF;
+        }
+        .style10
+        {
+            font-size: 8pt;
+        }
+        .style11
+        {
+            font-size: 8pt;
+            font-weight: bold;
+        }
+    </style>
+    <script type="text/javascript">
+        function amp_message() {
+            alert("Notice: All amplifier returns must be shipped to Pheonix.");
+        }
+    </script>
+</head>
+<body >
+    <form id="form1" runat="server">
+    <table class="style1">
+        <tr >
+            <td class="style4" 
+                style="border-top-style: solid; border-left-style: solid; border-width: 1px 0px 0px 1px; border-color: teal">
+                <img alt="" src="images/jllogo.gif" class="style7" 
+                    style="width: 175px; height: 79px" /></td>
+            <td style="background-image: url('images/navy_gray_background.gif')">
+                <center>
+                    <p class="MsoNormal" 
+                        style="color: #FFFFFF; font-size: large; font-family: Arial">
+                        <span class="style8">JL Audio</span></p>
+                    <p class="MsoNormal" 
+                        style="color: #FFFFFF; font-size: large; font-family: Arial">
+                        Recall Submission Site</p>
+                    <span class="style9">HD750 and MHD750</span></center>
+            </td>
+        </tr>
+        <tr style="background-image: url('images/navy_gray_background2.gif')">
+            <td class="style4">
+                &nbsp;&nbsp;</td>
+            <td style="text-align: right">
+                            <asp:Label ID="LabelUser" runat="server" style="color: #FFFFFF" Visible="False"></asp:Label>
+&nbsp;
+                            <asp:HyperLink ID="HyperLinkLogout" runat="server" ForeColor="White" 
+                    NavigateUrl="~/Logout.aspx" Visible="False" Font-Bold="True">Logout</asp:HyperLink>
+                        </td>
+        </tr>
+         <tr style="background-image: url('images/navy_gray_background.gif')">
+            <td class="style2" colspan="2">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4" 
+                
+                style="border-width: 1px; border-color: #008080; background-color: #E1E1E1; border-right-style: solid; border-left-style: solid;" 
+                valign="top">
+                <table class="style1">
+                    <tr>
+                        <td>
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:HyperLink ID="HyperLinkRequest" runat="server" CssClass="style6" 
+                                ForeColor="Black" NavigateUrl="~/RequestRAStart.aspx" Visible="False" 
+                                Font-Underline="False">Request RA</asp:HyperLink>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:HyperLink ID="HyperLinkStatus" runat="server" CssClass="style6" 
+                                ForeColor="Black" NavigateUrl="~/RAStatusCS.aspx" Visible="False" 
+                                Font-Underline="False">RA Status</asp:HyperLink>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:HyperLink ID="HyperLinkAppeal" runat="server" CssClass="style6" 
+                                ForeColor="Black" NavigateUrl="~/Appeal.aspx" Visible="False" 
+                                Font-Underline="False">Appeal</asp:HyperLink>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:HyperLink ID="HyperLinkAppeal0" runat="server" CssClass="style6" 
+                                ForeColor="Black" NavigateUrl="~/RequestSplit.aspx" Visible="False" 
+                                Font-Underline="False">Split Request</asp:HyperLink>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:HyperLink ID="HyperLinkReviewRequest" runat="server" CssClass="style6" 
+                                ForeColor="Black" NavigateUrl="~/RequestReview.aspx" Visible="False" 
+                                Font-Underline="False">Review Request</asp:HyperLink>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:HyperLink ID="HyperLinkApprovalCodes" runat="server" CssClass="style6" 
+                                ForeColor="Black" NavigateUrl="~/ApprovalCDs.aspx" Visible="False" 
+                                Font-Underline="False">Approval Codes</asp:HyperLink>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:HyperLink ID="HyperLinkActionCodes" runat="server" CssClass="style6" 
+                                ForeColor="Black" NavigateUrl="~/ActionCDs.aspx" BorderStyle="None" 
+                                Visible="False" Font-Underline="False">Action Codes</asp:HyperLink>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:HyperLink ID="HyperLinkSubcatAction" runat="server" CssClass="style6" 
+                                ForeColor="Black" NavigateUrl="~/SubcatActionCD.aspx" Visible="False" 
+                                Font-Underline="False">Subcategory / Action CD</asp:HyperLink>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="margin-left: 40px">
+                            <asp:HyperLink ID="HyperLinkSkuMaster" runat="server" CssClass="style6" 
+                                ForeColor="Black" NavigateUrl="~/SkuMasterListTemp.aspx" Visible="False" 
+                                Font-Underline="False">SKU Masterlist</asp:HyperLink>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:HyperLink ID="HyperLinkSCategoryMaster" runat="server" CssClass="style6" 
+                                ForeColor="Black" NavigateUrl="~/CategoryMaster.aspx" Visible="False" 
+                                Font-Underline="False">Category Master</asp:HyperLink>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:HyperLink ID="HyperLinkCog" runat="server" CssClass="style6" 
+                                ForeColor="Black" NavigateUrl="~/COG.aspx" Visible="False" 
+                                Font-Underline="False">COG</asp:HyperLink>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td style="border-right-style: solid; border-width: 1px; border-color: #008080">
+    <div style="text-align: center">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        <span class="style11">If you require assistance with the recall process or have 
+        any questions please contact JL Audio Customer Service:</span><span 
+            class="style10"><br />
+        JL Audio, Inc, 10369 North Commerce Pkwy., Miramar, FL 33025, Phone: 
+        954-443-1100 Fax: 954-443-1111</span></div>
+            </td>
+        </tr>
+       <tr style="background-image: url('images/navy_gray_background.gif')">
+            <td class="style3" colspan="2">
+                &nbsp;</td>
+        </tr>
+       <tr style="background-image: url('images/navy_gray_background.gif')">
+            <td class="style3" colspan="2">
+                <div align="right">
+                    <asp:Label ID="Label2" runat="server" 
+                        Text="Copyright © 2007, JL Audio, Inc. - All rights reserved." 
+                        style="font-size: 9pt; color: #FFFFFF"></asp:Label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td style="text-align: right">
+                <font color="#336699"><a href="http://portal.jlaudio.com:7782/Portal/legal.jsp">
+                <span style="COLOR: #336699"><u>Legal Notice</u></span></a> I
+                <a href="http://portal.jlaudio.com:7782/Portal/privacy.jsp">
+                <span style="COLOR: #336699"><u>Privacy Statement</u></span></a> </font></td>
+        </tr>
+        </table>
+    </form>
+</body>
+</html>

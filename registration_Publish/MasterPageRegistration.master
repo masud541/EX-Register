@@ -1,0 +1,100 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageRegistration.master.cs" Inherits="MasterPageRegistration" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+     <title>
+        Official JL Audio Product Registration Site
+    </title>
+    <meta name="description" content="Register Car Stereo, Marine Speakers, Amplifiers, Home Theater, Powersports Audio and much more at the Official JL Audio Product Registration Site." />
+    <meta name="keywords" content="jl, jl audio, register, registration, Car Stereo, Marine Speakers, car speakers, Amps, Amplifiers, Subs, Subwoofers, Home Theater, Powersports Audio" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+<style type="text/css"> 
+.smallFont {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px
+}
+.stepHeader {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: bold;
+        width: 713px;
+    }
+  
+a:link{
+  color: #0000FF;
+}
+    .style2
+    {
+        text-decoration: none;
+    }
+    .style333
+    {
+        color: #000000;
+    }
+    .style444
+    {
+        font-size: 10px;
+    }
+    #social
+    {
+        text-align: center;
+    }
+</style>
+
+</head>
+<body>    <form id="form1" runat="server">
+    <div>
+        
+<p>&nbsp;</p>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="10">
+  <tr>
+    <td><img src="images/Header_Logo.jpg" alt="JLAudioLogo" width="200" height="25" align="right" /></td>
+  </tr>
+</table>
+<table width="767" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="40" height="20" align="left" valign="top" bgcolor="#D1D2D4"><img src="images/LT_Table.gif" width="14" height="14" /></td>
+    <td bgcolor="#D1D2D4" rowspan="3">&nbsp;<asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+      </td>
+    <td width="14" align="right" valign="top" bgcolor="#D1D2D4"><img src="images/RT_Table.gif" alt="" width="14" height="14" /></td>
+  </tr>
+  <tr>
+    <td height="31" bgcolor="#D1D2D4">&nbsp;</td>
+    <td bgcolor="#D1D2D4">&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="443" bgcolor="#D1D2D4">&nbsp;</td>
+    <td bgcolor="#D1D2D4">&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="18" valign="bottom" bgcolor="#D1D2D4"><img src="images/LB_Table.gif" width="14" height="14" /></td>
+    <td height="14" bgcolor="#D1D2D4">
+</td>
+    <td align="right" valign="bottom" bgcolor="#D1D2D4"><img src="images/RB_Table.gif" alt="" width="14" height="14" /></td>
+  </tr>
+</table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="10">
+  <tr>
+    <td align="center" class="smallFont"><p>If you require assistance with the registration process, please contact JL Audio Customer Service: JL Audio, Inc, 10369 North Commerce Pkwy., Miramar, FL 33025, Phone: 1-888-JLAUDIO 1-888-552-8346 Fax: 954-443-1111</p>
+    <p><span class="style444">Copyright © 2017, JL Audio, Inc. - All Rights Reserved. 
+        <font color="#336699"><a href="http://www.jlaudio.com/footer/Copyright+%26+Trademark+Notice/Copyright+%26+Trademark+Notice/719811" 
+            class="style2">
+                <span class="style333">Copyright & Trademark Notice</span></a></font><span class="style333"> I
+                </span></span><font color="#336699">
+                <a href="http://www.jlaudio.com/footer/Privacy/Privacy+Policy/719808" 
+            class="style2">
+                <span class="style333">Privacy Policy</span></a> </font></p></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</div>
+    </form>
+</body>
+
+</html>
